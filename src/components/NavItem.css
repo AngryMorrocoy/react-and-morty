@@ -1,0 +1,11 @@
+li {
+  margin: 0 2em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+  grid-gap: .5em;
+}
+
+li:hover {
+  cursor: pointer;
+}
