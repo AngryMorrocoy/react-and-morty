@@ -1,0 +1,14 @@
+select {
+  border: none;
+  margin: 0;
+  width: 100%;
+  padding: .5em 1em;
+}
+
+select:focus {
+  outline: 0.15em solid var(--strong-cyan);
+}
+
+select:focus-within {
+  background-color: var(--white);
+}

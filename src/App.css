@@ -1,10 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
+
+:root {
+  --strong-cyan: #4cdbc4;
+  --light-cyan: #c8eee6;
+  --white: #f3fbfa;
+}
 
 body {
   font-size: 16px;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #C8EEE6;
+  background-color: var(--light-cyan);
+  box-sizing: border-box;
 }
 
+input,
+select {
+  box-sizing: border-box;
+}

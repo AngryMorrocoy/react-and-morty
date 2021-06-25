@@ -2,9 +2,9 @@ import "./NavItem.css";
 import PropTypes from "prop-types";
 import { BsSearch } from "react-icons/bs";
 
-const NavItem = ({ content }) => {
+const NavItem = ({ content, onClick }) => {
   return (
-    <li>
+    <li onClick={onClick}>
       <BsSearch /> {content}
     </li>
   );

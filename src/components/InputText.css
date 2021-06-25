@@ -1,0 +1,13 @@
+input {
+  border: none;
+  border-radius: none;
+  padding: .5em 1em;
+  margin: 0;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  outline: .15em solid var(--strong-cyan);
+}
+

@@ -1,0 +1,29 @@
+.character-card {
+  border-radius: 1.25em;
+  background-color: var(--strong-cyan);
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-gap: 1em;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1.25em 0 0 1.25em;
+}
+
+.character-card__info {
+  text-align: left;
+}
+
+.character__name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--white);
+  margin-top: 0.5em;
+}
+
+.character__status,
+.character__gender {
+  font-size: 1.15rem;
+}

@@ -1,0 +1,21 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 3rem;
+}
+
+.character-cards {
+  box-sizing: content-box;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 2%;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 770px) {
+  .character-cards {
+    grid-template-columns: auto;
+  }
+}

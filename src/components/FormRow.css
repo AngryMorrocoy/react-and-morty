@@ -1,0 +1,10 @@
+.form-row {
+  display: grid;
+  grid-template-columns: 10% auto;
+  margin: .75em 0em;
+}
+
+.form-row > * {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+

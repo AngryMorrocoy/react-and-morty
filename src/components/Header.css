@@ -1,6 +1,6 @@
 .main-header {
   height: 20rem;
-  background-color: #4CDBC4;
+  background-color: var(--strong-cyan);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
 }
 
 .main-header h1 {
-  color: #F3FBFA;
+  color: var(--white);
   cursor: default;
   font-weight: 300;
   font-size: 5rem;
