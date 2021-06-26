@@ -2,7 +2,6 @@ import Form from "./Form";
 import InputText from "./InputText";
 import ComboBox from "./ComboBox";
 import { useState, useEffect } from "react";
-import { searchCharacters } from "../api/rickAndMortyApi";
 import { useHistory } from "react-router-dom";
 
 const SearchCharacterForm = () => {
@@ -17,7 +16,7 @@ const SearchCharacterForm = () => {
     console.log(history)
     history.push(redirect);
     setRedirect(null);
-  }, [redirect]);
+  }, [redirect, history]);
 
   const rows = [
     [
@@ -48,8 +47,8 @@ const SearchCharacterForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const redirectUrl = `/search/?name=${name}&status=${
-      status != "any" ? status : ""
-    }&gender=${gender != "any" ? gender : ""}`;
+      status !== "any" ? status : ""
+    }&gender=${gender !== "any" ? gender : ""}`;
     setRedirect(redirectUrl);
   };
 
