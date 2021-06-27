@@ -12,13 +12,13 @@ module.exports.fetchRandomCharacters = async () => {
 };
 
 module.exports.searchCharacters = async ({ name, status, gender }) => {
-  console.log("?")
   const url =
     baseUrl +
-    `/character/?name=${name}&status=${status === "any" &&
-      ""}&gender=${gender === "any" && ""}`;
+    `/character/?name=${name}&status=${status === "any" ? "" : status}&gender=${
+      gender === "any" ? "" : gender
+    }`;
 
   const response = await fetch(url);
-  const json = await response.json()
+  const json = await response.json();
   return json;
 };
