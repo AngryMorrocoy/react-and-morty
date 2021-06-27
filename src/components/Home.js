@@ -5,7 +5,7 @@ import "./Home.css";
 
 const Home = () => {
   const { isLoading, data, error } = useQuery(
-    "characters",
+    "randomCharacters",
     fetchRandomCharacters
   );
 
