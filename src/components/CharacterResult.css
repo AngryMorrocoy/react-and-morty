@@ -1,0 +1,23 @@
+.character-result {
+  display: grid;
+  grid-template-columns: 3rem auto;
+  height: 3rem;
+  align-items: center;
+}
+
+.character-result__img {
+  height: auto;
+  width: 100%;
+}
+
+.character-name {
+  background-color: var(--strong-cyan);
+  margin: 0;
+  padding: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding-left: .75em;
+  border-radius: 0 2em 2em 0;
+}
+

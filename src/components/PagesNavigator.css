@@ -1,0 +1,32 @@
+.pages-navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+}
+
+.page-indicator-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.page-indicator {
+  --margin: 1rem;
+  margin: 0 var(--margin) 0 var(--margin);
+  color: black;
+}
+
+.actual-page {
+  font-weight: 700;
+  color: var(--strong-dark-cyan);
+}
+
+.page-nav-arrow {
+  cursor: pointer;
+}
+
+.page-nav-arrow.disabled {
+  color: #454545;
+  cursor: not-allowed;
+}
+

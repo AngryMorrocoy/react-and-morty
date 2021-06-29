@@ -2,6 +2,7 @@
 
 :root {
   --strong-cyan: #4cdbc4;
+  --strong-dark-cyan: #17574d;
   --light-cyan: #c8eee6;
   --white: #f3fbfa;
 }
@@ -19,3 +20,8 @@ input,
 select {
   box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+}
+

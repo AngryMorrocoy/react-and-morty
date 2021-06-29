@@ -1,7 +1,10 @@
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { searchCharacters } from "../api/rickAndMortyApi";
+import CharacterResult from "./CharacterResult";
+import PagesNavigator from "./PagesNavigator";
+import "./SearchResults.css";
 
 const SearchResults = () => {
   const location = useLocation();
@@ -11,23 +14,42 @@ const SearchResults = () => {
       const params = new URLSearchParams(location.search);
       const name = params.get("name");
       const status = params.get("status") || "any";
-      console.log(params.get("status"));
-      console.log(status);
       const gender = params.get("gender") || "any";
-      return await searchCharacters({ name, status, gender });
+      const page = params.get("page") || "1";
+      return await searchCharacters({ name, status, gender, page });
     }
   );
 
   useEffect(() => {
     refetch();
-  }, [location]);
+  }, [location, refetch]);
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
-  console.log(data);
+  if (data.error) {
+    return (
+      <div>
+        <h2>Error 404 "{new URLSearchParams(location.search).get("name")}" not found</h2>
+      </div>
+    )
+  }
 
-  return <div>React arrow component</div>;
+  return (
+    <div className="container">
+      <div className="container-header">
+        <p className="search-results-title">
+          Seach results for "{new URLSearchParams(location.search).get("name")}"
+        </p>
+        <PagesNavigator location={location} requestInfo={data.info} />
+      </div>
+      <div className="search-results">
+        {data.results.map((character) => {
+          return <CharacterResult key={character.id} character={character} />;
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default SearchResults;

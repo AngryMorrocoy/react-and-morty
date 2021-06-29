@@ -11,10 +11,10 @@ module.exports.fetchRandomCharacters = async () => {
   return json;
 };
 
-module.exports.searchCharacters = async ({ name, status, gender }) => {
+module.exports.searchCharacters = async ({ name, status, gender, page }) => {
   const url =
     baseUrl +
-    `/character/?name=${name}&status=${status === "any" ? "" : status}&gender=${
+    `/character/?page=${page}&name=${name}&status=${status === "any" ? "" : status}&gender=${
       gender === "any" ? "" : gender
     }`;
 
