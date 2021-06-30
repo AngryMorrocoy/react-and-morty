@@ -54,7 +54,7 @@ const SearchCharacterForm = () => {
 
   return (
     <>
-      <Form rows={rows} onSubmit={handleSubmit} />
+      <Form rows={rows} submitButtonText="Search" onSubmit={handleSubmit} />
     </>
   );
 };

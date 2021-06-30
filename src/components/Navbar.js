@@ -10,17 +10,23 @@ const Navbar = () => {
     [
       "Characters",
       () =>
-        whichForm !== "characters" ? setWhichForm("characters") : setWhichForm(null),
+        whichForm !== "characters"
+          ? setWhichForm("characters")
+          : setWhichForm(null),
     ],
     [
       "Episodes",
       () =>
-        whichForm !== "episodes" ? setWhichForm("episodes") : setWhichForm(null),
+        whichForm !== "episodes"
+          ? setWhichForm("episodes")
+          : setWhichForm(null),
     ],
     [
       "Locations",
       () =>
-        whichForm !== "locations" ? setWhichForm("locations") : setWhichForm(null),
+        whichForm !== "locations"
+          ? setWhichForm("locations")
+          : setWhichForm(null),
     ],
   ];
 
@@ -34,7 +40,7 @@ const Navbar = () => {
           })}
         </ul>
       </nav>
-      { whichForm === "characters" && <SearchCharacterForm /> }
+      {whichForm === "characters" && <SearchCharacterForm />}
     </>
   );
 };
