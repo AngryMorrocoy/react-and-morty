@@ -41,7 +41,7 @@ const SearchResults = () => {
         <p className="search-results-title">
           Seach results for "{new URLSearchParams(location.search).get("name")}"
         </p>
-        <PagesNavigator location={location} requestInfo={data.info} />
+        <PagesNavigator locationSearch={location.search} requestInfo={data.info} />
       </div>
       <div className="search-results">
         {data.results.map((character) => {

@@ -2,12 +2,12 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link, useHistory } from "react-router-dom";
 import "./PagesNavigator.css";
 
-const PagesNavigator = ({ location, requestInfo }) => {
+const PagesNavigator = ({ locationSearch, requestInfo }) => {
   let pages = [];
   const history = useHistory();
 
   const buildNewPageUrl = (newPage) => {
-    const pageParams = new URLSearchParams(location.search);
+    const pageParams = new URLSearchParams(locationSearch);
     pageParams.set("page", newPage);
     return "?" + pageParams.toString();
   };
