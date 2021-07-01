@@ -1,6 +1,6 @@
 const baseUrl = "https://rickandmortyapi.com/api";
 
-module.exports.fetchRandomCharacters = async () => {
+const fetchRandomCharacters = async () => {
   let url = baseUrl + "/character/";
   for (let i = 0; i < 10; i++) {
     const randInt = Math.floor(Math.random() * 671) + 1;
@@ -11,14 +11,17 @@ module.exports.fetchRandomCharacters = async () => {
   return json;
 };
 
-module.exports.searchCharacters = async ({ name, status, gender, page }) => {
+const searchCharacters = async ({ name, status, gender }) => {
   const url =
     baseUrl +
-    `/character/?page=${page}&name=${name}&status=${status === "any" ? "" : status}&gender=${
-      gender === "any" ? "" : gender
-    }`;
+    `/character/?name=${name}&status=${status === "any" ? "" : status}&gender=${gender === "any" ? "" : gender}`;
 
   const response = await fetch(url);
-  const json = await response.json();
+  const json = await response.json()
   return json;
 };
+
+export {
+  fetchRandomCharacters,
+  searchCharacters
+}
