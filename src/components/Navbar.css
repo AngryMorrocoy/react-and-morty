@@ -10,3 +10,40 @@ ul {
   display: flex;
 }
 
+.form-section {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.display-grid {
+  display: grid;
+}
+
+.react-logo {
+  height: 100%;
+  width: auto;
+  animation: rotate 5s infinite;
+  color: var(--strong-dark-cyan);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .react-logo {
+    display: none;
+  }
+
+  .form-section {
+    grid-template-columns: 1fr;
+  }
+}
+

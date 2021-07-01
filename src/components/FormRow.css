@@ -1,6 +1,6 @@
 .form-row {
   display: grid;
-  grid-template-columns: 10% auto;
+  grid-template-columns: 4em auto;
   margin: .75em 0em;
 }
 

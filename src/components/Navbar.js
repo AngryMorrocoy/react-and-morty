@@ -2,45 +2,31 @@ import "./Navbar.css";
 import NavItem from "./NavItem";
 import SearchCharacterForm from "./SearchCharacterForm";
 import { useState } from "react";
+import { FaReact } from "react-icons/fa";
 
 const Navbar = () => {
-  const [whichForm, setWhichForm] = useState(null);
+  const [showForm, setShowForm] = useState(false);
 
   const navItems = [
     [
       "Characters",
       () =>
-        whichForm !== "characters"
-          ? setWhichForm("characters")
-          : setWhichForm(null),
-    ],
-    [
-      "Episodes",
-      () =>
-        whichForm !== "episodes"
-          ? setWhichForm("episodes")
-          : setWhichForm(null),
-    ],
-    [
-      "Locations",
-      () =>
-        whichForm !== "locations"
-          ? setWhichForm("locations")
-          : setWhichForm(null),
-    ],
+        showForm !== "characters"
+          ? setShowForm("characters")
+          : setShowForm(null),
+    ]
   ];
 
   return (
     <>
       <nav>
         <h3>Logo</h3>
-        <ul>
-          {navItems.map(([text, onClick]) => {
-            return <NavItem key={text} content={text} onClick={onClick} />;
-          })}
-        </ul>
+        <NavItem content="Characters" onClick={() => setShowForm(!showForm)} />
       </nav>
-      {whichForm === "characters" && <SearchCharacterForm />}
+      <div className={`form-section ${showForm ? "display-grid" : ""}`}>
+        {showForm && <SearchCharacterForm />}
+        <FaReact className="react-logo" />
+      </div>
     </>
   );
 };

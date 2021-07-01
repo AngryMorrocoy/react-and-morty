@@ -12,6 +12,7 @@
 
 .character-name {
   background-color: var(--strong-cyan);
+  color: #3e2e3d;
   margin: 0;
   padding: 0;
   height: 3rem;
