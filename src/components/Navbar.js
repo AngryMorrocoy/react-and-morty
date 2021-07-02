@@ -7,16 +7,6 @@ import { FaReact } from "react-icons/fa";
 const Navbar = () => {
   const [showForm, setShowForm] = useState(false);
 
-  const navItems = [
-    [
-      "Characters",
-      () =>
-        showForm !== "characters"
-          ? setShowForm("characters")
-          : setShowForm(null),
-    ]
-  ];
-
   return (
     <>
       <nav>

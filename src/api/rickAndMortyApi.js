@@ -11,10 +11,11 @@ const fetchRandomCharacters = async () => {
   return json;
 };
 
-const searchCharacters = async ({ name, status, gender }) => {
-  const url =
-    baseUrl +
-    `/character/?name=${name}&status=${status === "any" ? "" : status}&gender=${gender === "any" ? "" : gender}`;
+const searchCharacters = async ({ name, status, gender, page }) => {
+  const params = new URLSearchParams({
+    page, name, status, gender
+  });
+  const url = `${baseUrl}/character/?${params.toString()}`.replaceAll("any", "");
 
   const response = await fetch(url);
   const json = await response.json()
